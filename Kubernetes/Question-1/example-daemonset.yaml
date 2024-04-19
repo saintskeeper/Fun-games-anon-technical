@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  name: linux-log-aggregator
+  namespace: kube-system
+spec:
+  selector:
+    matchLabels:
+      name: linux-log-aggregator
+  template:
+    metadata:
+      labels:
+        name: linux-log-aggregator
+    spec:
+      affinity:
+        nodeAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            nodeSelectorTerms:
+            - matchExpressions:
+              - key: kubernetes.io/os
+                operator: In
+                values:
+                - linux
+      tolerations:
+      - key: "node-role.kubernetes.io/linux"
+        operator: "Exists"
+        effect: "NoSchedule"
+      containers:
+      - name: log-aggregator
+        image: log-aggregator-image:latest
