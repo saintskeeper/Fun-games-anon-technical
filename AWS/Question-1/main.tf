@@ -38,7 +38,7 @@ resource "aws_iam_role_policy" "ec2_s3_access_policy" {
 }
 
 resource "aws_iam_instance_profile" "ec2_instance_profile" {
-  name = "MyInstanceProfile"
+  name = "S3AccessInstanceProfile"
   role = aws_iam_role.ec2_s3_access_role.name
 }
 

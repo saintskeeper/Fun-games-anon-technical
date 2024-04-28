@@ -16,3 +16,8 @@ hop on the node and check system logs && statuc containers for any issues.
 # Return the Node to Service
 
 Once the node is back up and running, uncordon the node to allow new pods to be scheduled on it.
+
+
+
+# For a production cluster 
+Be sure to scale up the nodegroups prior to draining to ensure there's no outage prior to draining the node.

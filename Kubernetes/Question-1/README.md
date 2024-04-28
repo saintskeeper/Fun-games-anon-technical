@@ -10,3 +10,8 @@
 2. Node Affinity: Targets the deployment only to Linux nodes.
 3. Tolerations: Allows the pod to be scheduled on nodes with matching taints, if any.
 
+
+
+for the node ```bash
+kubectl taint NODE NAME KEY_1='node-role.kubernetes.io/linux' TAINT_EFFECT_1='NoSchedule'
+```
