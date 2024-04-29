@@ -16,3 +16,6 @@ terraform {
 }
 
 ```
+
+## NOTES 
+This effectivly locks the "workspace" when a `terraform apply` is triggered

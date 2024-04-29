@@ -39,3 +39,7 @@ like Hyper-V isolation. Malicious code within a container may potentially affect
 # what i would do instead.
 
 Instead of dealing with windows isolation, I'd  use EKS windows AMI  nodes with a windows workload to handle resource isolation, it's cheaper and more effective. 
+
+
+# docs on this 
+https://learn.microsoft.com/en-us/virtualization/windowscontainers/manage-containers/hyperv-container
